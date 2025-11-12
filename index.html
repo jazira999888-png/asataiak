@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Асатаяқ</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f9fafb;
+      margin: 0;
+      padding: 30px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    p {
+      max-width: 650px;
+      margin: 0 auto 20px;
+      color: #444;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+
+    img {
+      width: 80%;
+      max-width: 400px;
+      border-radius: 12px;
+      margin-top: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    button {
+      background: #e75480; /* ашық қызғылт түс */
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #d6336c;
+    }
+
+    .pink-bullets {
+      list-style: none;
+      padding: 0;
+      max-width: 720px;
+      margin: 20px auto;
+      text-align: left;
+    }
+    .pink-bullets li {
+      position: relative;
+      padding-left: 36px;
+      margin: 12px 0;
+      line-height: 1.5;
+      color: #333;
+      background: #fff;
+      border-radius: 10px;
+      padding: 12px 16px 12px 36px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+    .pink-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ff66b3;
+      box-shadow: 0 0 0 4px rgba(255,102,179,0.12);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Асатаяқ</h1>
+
+  <p>
+    Асатаяқ – қазақтың дәстүрлі музыкалық аспаптарының бірі. 
+    Ол көбінесе салтанатты, мерекелік, жыр-терме немесе діни рәсімдерде қолданылған. 
+    Асатаяқ – тек дыбыс шығаратын аспап қана емес, ол қазақтың мәдени және рухани өмірінің бір бөлігі ретінде ерекше маңызға ие.
+  </p>
+
+  <ul class="pink-bullets">
+    <li><strong>Құрылысы:</strong> Асатаяқ көбіне ағаштан жасалып, ұшында металл сылдырмақтар ілінеді. Оны шайқағанда сылдыр дыбыс шығады.</li>
+    <li><strong>Қолданылуы:</strong> Ертеде салт-дәстүр мен діни жоралғыларда қолданылған, кейін музыкалық ансамбльдер мен оркестрлер құрамына енді.</li>
+    <li><strong>Дыбысы:</strong> Металл сылдырмақтарының арқасында әуенге ерекше ырғақ пен әсер береді.</li>
+    <li><strong>Мәдени маңызы:</strong> Асатаяқ – қазақ халқының наным-сенімін, салт-дәстүрін бейнелейтін рухани мұра.</li>
+  </ul>
+
+  <!-- Фото -->
+  <img src="asataiak.jpeg" alt="Асатаяқ суреті">
+
+  <!-- ҮНІ батырмасы -->
+  <div>
+    <button id="playButton" onclick="toggleAsataiak()">▶ ҮНІ</button>
+  </div>
+
+  <!-- Аудио -->
+  <audio id="asataiakSound" src="asataiak-1 (mp3cut.net).mp3"></audio>
+
+  <script>
+    const sound = document.getElementById('asataiakSound');
+    const button = document.getElementById('playButton');
+
+    function toggleAsataiak() {
+      if (sound.paused) {
+        sound.play();
+        button.textContent = '⏸ Пауза';
+      } else {
+        sound.pause();
+        button.textContent = '▶ ҮНІ';
+      }
+    }
+
+    sound.addEventListener('ended', () => {
+      button.textContent = '▶ ҮНІ';
+    });
+  </script>
+
+</body>
+</html>
